@@ -39,8 +39,7 @@
 }
 
 .intro .title {
-  margin: 0 0 6px;
-  font-size: clamp(22px, 3.5vw, 32px);
+  font-size: 2rem;
 }
 .intro .lead {
   margin: 0 0 10px;

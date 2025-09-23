@@ -105,6 +105,31 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* 🧰 Reset box sizing and spacing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box ;
+  margin: 0 ;
+  padding: 0 ;
+}
+
+/* ✋ Improve tap and touch interaction for mobile */
+a,
+button {
+  cursor: pointer ;
+  touch-action: manipulation ;
+  -webkit-tap-highlight-color: transparent ;
+  text-decoration: none;
+}
+
+/* 🖼️ Make all images responsive by default */
+img {
+  max-width: 100% ;
+  height: auto ;
+  display: block ;
+}
+
 .site-main {
   min-height: 100dvh;
   max-width: var(--container);
