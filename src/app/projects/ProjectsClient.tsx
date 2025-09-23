@@ -15,9 +15,67 @@ type Project = {
 }
 
 const DATA: Project[] = [
-  // ... (same data you already had)
+  {
+    title: 'SGW Project Manager',
+    summary:
+      'Operations planning platform for members, projects, licenses, and notifications.',
+    tags: ['Next.js', 'TypeScript', 'MongoDB'],
+    href: '/projects/sgw-project-manager',
+    year: 2025,
+    status: 'Live',
+  },
+  {
+    title: 'Caroline Clinic Website',
+    summary:
+      'Multilingual clinic site with SEO-ready content model and admin tools.',
+    tags: ['Next.js', 'i18n', 'SEO'],
+    href: '/projects/caroline-clinic',
+    year: 2024,
+    status: 'Live',
+  },
+  {
+    title: 'Groundwater Data Portal',
+    summary:
+      'Dashboards for industrial water, QA pipelines, and compliance reporting.',
+    tags: ['Data Viz', 'ETL', 'Compliance'],
+    href: '/projects/groundwater-portal',
+    year: 2024,
+    status: 'Internal',
+  },
+  {
+    title: 'Wee • Profile',
+    summary:
+      'This site — clean tokens, dark theme, and App Router best practices.',
+    tags: ['Next.js', 'Design System'],
+    href: '/projects/wee-profile',
+    year: 2025,
+    status: 'In Progress',
+  },
+  {
+    title: 'License Expiry Notifier',
+    summary:
+      'Cron + webhook alerts for groundwater drilling license renewals via LINE/Email.',
+    tags: ['Automation', 'LINE', 'MongoDB'],
+    href: '/projects/license-notifier',
+    year: 2025,
+  },
+  {
+    title: 'Next.js Boilerplate',
+    summary:
+      'Reusable template: brand config, i18n hooks, global CSS variables, structured routes.',
+    tags: ['Starter', 'TypeScript', 'Netlify'],
+    href: '/projects/nextjs-boilerplate',
+    year: 2025,
+  },
+  {
+    title: 'Operational Plan Dashboard',
+    summary:
+      'Gantt-style schedules with drag-scroll, members view, and quick-add interactions.',
+    tags: ['UX', 'Scheduling', 'Next.js'],
+    href: '/projects/operational-plan',
+    year: 2025,
+  },
 ]
-
 const ALL_TAGS = Array.from(new Set(DATA.flatMap((p) => p.tags))).sort()
 type SortKey = 'recent' | 'a-z'
 
