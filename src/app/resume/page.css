@@ -1,0 +1,164 @@
+/* Uses tokens from globals.css */
+
+/* Layout root */
+.resume {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 var(--space) 32px;
+}
+
+/* Action bar (screen only) */
+.resume-actions {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+  padding: 16px 0 8px;
+}
+.print-hide { display: block; }
+
+/* Buttons (local style to avoid global coupling) */
+.btn {
+  display: inline-flex; align-items: center; gap: 10px;
+  text-decoration: none; font-weight: 800; letter-spacing: .2px;
+  border-radius: 12px; border: 1px solid var(--border);
+  padding: 10px 14px; background: var(--panel-solid); color: var(--text);
+  transition: transform .2s ease, background .2s ease, border-color .2s ease, opacity .2s ease;
+}
+.btn:hover { transform: translateY(-1px); background: rgba(255,255,255,0.04); }
+.btn.primary {
+  background: linear-gradient(180deg, rgba(78,140,255,.22), rgba(78,140,255,.10));
+  border-color: rgba(78,140,255,.35);
+  box-shadow: inset 0 0 0 1px rgba(78,140,255,.25);
+}
+.btn.ghost { background: var(--panel-solid); }
+
+/* Header */
+.resume-header {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 12px;
+  align-items: end;
+  padding: 18px 0 10px;
+  border-bottom: 1px solid var(--border);
+}
+.identity .name {
+  margin: 0;
+  font-size: clamp(24px, 4vw, 36px);
+  letter-spacing: .2px;
+}
+.identity .title {
+  margin: 4px 0 0; color: var(--text-muted);
+}
+.contacts {
+  list-style: none; padding: 0; margin: 0;
+  display: grid; gap: 4px; justify-items: end;
+  font-size: 14px;
+}
+.contacts a { color: var(--text); text-decoration: underline; }
+
+/* Summary */
+.summary { padding: 12px 0; }
+.h2 { margin: 0 0 6px; font-size: 18px; }
+.lead { margin: 0; color: var(--text-muted); }
+
+/* Body grid */
+.body {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: 2fr 1fr;
+  padding-top: 6px;
+}
+@media (max-width: 980px) {
+  .body { grid-template-columns: 1fr; }
+}
+.col { min-width: 0; }
+
+.block {
+  border: 1px solid var(--border);
+  background: var(--panel-solid);
+  border-radius: 14px;
+  padding: 14px;
+}
+
+/* Experience timeline */
+.timeline {
+  list-style: none; padding: 0; margin: 0;
+  display: grid; gap: 12px;
+}
+.item {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: 10px;
+  align-items: start;
+}
+.when { font-size: 12px; color: var(--text-muted); }
+.role { margin: 0; font-size: 16px; }
+.org { color: var(--text-muted); margin-bottom: 6px; }
+.desc { margin: 0 0 6px; color: var(--text-muted); }
+.bullets { padding-left: 18px; margin: 0; }
+.bullets li { margin: 4px 0; }
+
+.tags {
+  display: flex; flex-wrap: wrap; gap: 6px;
+  list-style: none; padding: 0; margin: 8px 0 0;
+}
+.tags li {
+  font-size: 12px;
+  padding: 4px 8px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid var(--border);
+}
+
+/* Lists */
+.list { list-style: none; padding: 0; margin: 0; display: grid; gap: 8px; }
+.row { display: flex; justify-content: space-between; gap: 12px; }
+
+/* Skills */
+.skills { display: grid; gap: 10px; }
+.h3 { margin: 4px 0 6px; font-size: 15px; }
+
+/* Note */
+.note { text-align: center; }
+
+/* ---- PRINT STYLES ---- */
+@media print {
+  :root {
+    /* ensure white page with black text */
+    --bg: #ffffff !important;
+    --text: #000000 !important;
+    --text-muted: #444444 !important;
+    --border: #cccccc !important;
+    --panel-solid: #ffffff !important;
+  }
+
+  /* Hide site chrome */
+  .nav-header,
+  .site-footer,
+  .resume-actions,
+  .print-hide { display: none !important; }
+
+  html, body { background: #fff !important; }
+  .resume {
+    max-width: 210mm; /* A4 width */
+    padding: 0;
+  }
+
+  /* Paper sizing/margins */
+  @page {
+    size: A4;
+    margin: 12mm;
+  }
+
+  /* Remove shadows/gradients for crisp print */
+  * {
+    box-shadow: none !important;
+    text-shadow: none !important;
+    background-image: none !important;
+  }
+
+  a, a:visited { color: #000 !important; text-decoration: underline !important; }
+
+  /* Avoid awkward breaks */
+  .block, .item, .timeline, .list { break-inside: avoid; }
+}

@@ -1,0 +1,110 @@
+/* Uses tokens from globals.css */
+
+.contact-page {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 var(--space) 32px;
+}
+
+/* Header */
+.contact-head { padding: 24px 0 10px; }
+.title { margin: 0 0 6px; font-size: clamp(22px, 3.4vw, 32px); }
+.subtitle { margin: 0; }
+
+/* Grid */
+.contact-grid {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: 1fr;
+}
+@media (min-width: 980px) {
+  .contact-grid { grid-template-columns: 2fr 1fr; }
+}
+
+/* Panels */
+.panel {
+  border: 1px solid var(--border);
+  background: var(--panel-solid);
+  border-radius: 14px;
+  padding: 14px;
+}
+
+/* Form */
+.form .row {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: 1fr;
+}
+@media (min-width: 720px) {
+  .form .row { grid-template-columns: 1fr 1fr; }
+}
+
+.field { display: grid; gap: 6px; }
+.field label { font-weight: 800; letter-spacing: .2px; }
+.field .req { color: var(--brand); margin-left: 4px; }
+
+input, select, textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,0.03);
+  color: var(--text);
+  outline: none;
+}
+textarea { resize: vertical; min-height: 120px; }
+input:focus, select:focus, textarea:focus {
+  border-color: rgba(78,140,255,.35);
+  box-shadow: 0 0 0 3px rgba(78,140,255,.12);
+}
+
+.actions { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 6px; }
+
+/* Buttons */
+.btn {
+  display: inline-flex; align-items: center; gap: 10px;
+  text-decoration: none; font-weight: 800; letter-spacing: .2px;
+  border-radius: 12px; border: 1px solid var(--border);
+  padding: 10px 14px; background: var(--panel-solid); color: var(--text);
+  transition: transform .2s ease, background .2s ease, border-color .2s ease, opacity .2s ease;
+}
+.btn:hover { transform: translateY(-1px); background: rgba(255,255,255,0.04); }
+.btn:active { transform: translateY(0); opacity: .92; }
+.btn.primary {
+  background: linear-gradient(180deg, rgba(78,140,255,.22), rgba(78,140,255,.10));
+  border-color: rgba(78,140,255,.35);
+  box-shadow: inset 0 0 0 1px rgba(78,140,255,.25);
+}
+.btn.ghost { background: var(--panel-solid); }
+
+/* Messages */
+.error {
+  margin-top: 6px;
+  color: #ffb4b4;
+}
+.success {
+  margin-top: 6px;
+  color: #9be39b;
+}
+
+/* Info panel */
+.info .h2 { margin: 0 0 8px; font-size: 18px; }
+.list {
+  list-style: none; padding: 0; margin: 0 0 12px; display: grid; gap: 8px;
+}
+.list li {
+  display: flex; justify-content: space-between; gap: 12px;
+  border: 1px dashed var(--border); border-radius: 12px; padding: 8px 10px;
+  background: rgba(255,255,255,0.02);
+}
+.list span { color: var(--text-muted); }
+.list a { color: var(--text); text-decoration: underline; }
+.bullets { margin: 0; padding-left: 18px; color: var(--text-muted); }
+
+/* Honeypot (hidden field) */
+.hp { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
+
+/* Motion */
+@media (prefers-reduced-motion: reduce) {
+  .btn, input, select, textarea { transition: none !important; }
+}

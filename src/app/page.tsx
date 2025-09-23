@@ -61,7 +61,7 @@ export default function HomePage() {
           <Link className="btn ghost" href="/projects">
             View projects
           </Link>
-          <a className="btn ghost" href="/resume.pdf">
+          <a className="btn ghost" href="/resume">
             Resume
           </a>
         </div>
