@@ -3,7 +3,6 @@
 import Link from 'next/link'
 import { useMemo, useState, useEffect } from 'react'
 import { usePathname, useRouter, useSearchParams } from 'next/navigation'
-import './page.css'
 
 type Project = {
   title: string

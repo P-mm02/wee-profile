@@ -202,16 +202,16 @@ export default function ContactPage() {
             </li>
             <li>
               <span>Email</span>
-              <a href="mailto:hello@example.com">hello@example.com</a>
+              <a href="mailto:poomtawee@outlook.com">poomtawee@outlook.com</a>
             </li>
             <li>
               <span>GitHub</span>
               <a
-                href="https://github.com/your-github"
+                href="https://github.com/P-mm02"
                 target="_blank"
                 rel="noreferrer"
               >
-                github.com/your-github
+                github.com/P-mm02
               </a>
             </li>
             <li>

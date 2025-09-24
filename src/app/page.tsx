@@ -60,7 +60,7 @@ export default function HomePage() {
           </Link>
           <Link className="btn ghost" href="/projects">
             View projects
-          </Link>
+          </Link> 
           <a className="btn ghost" href="/resume">
             Resume
           </a>
@@ -68,14 +68,14 @@ export default function HomePage() {
 
         <div className="hero-stats">
           <div className="stat">
-            <div className="stat-num">10+ yrs</div>
+            <div className="stat-num">2+ yrs</div>
             <div className="stat-label muted">Industry exposure</div>
           </div>
-          <div className="stat">
+{/*           <div className="stat">
             <div className="stat-num">50+ </div>
             <div className="stat-label muted">Deploys & launches</div>
           </div>
-          <div className="stat">
+ */}          <div className="stat">
             <div className="stat-num">99.9%</div>
             <div className="stat-label muted">Uptime targets</div>
           </div>
